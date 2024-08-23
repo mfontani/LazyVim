@@ -9,5 +9,10 @@ vim.cmd([[
     " TreeSitter Context
     autocmd ColorScheme * highlight TreesitterContextBottom           gui=underline guifg=#6272A4 guibg=#111111
     autocmd ColorScheme * highlight TreesitterContextLineNumberBottom gui=underline guifg=#6272A4 guibg=#111111
+    " Hints / Diagnostics
+    autocmd ColorScheme * highlight DiagnosticVirtualTextInfo  gui=underline guifg=#6274A4 guibg=#111111
+    autocmd ColorScheme * highlight DiagnosticVirtualTextError gui=underline guifg=#A46274 guibg=#111111
+    autocmd ColorScheme * highlight DiagnosticVirtualTextWarn  gui=underline guifg=#F1FA8C guibg=#111111
+    autocmd ColorScheme * highlight DiagnosticVirtualTextHint  gui=underline guifg=#CCDDFF guibg=#111111
 ]])
 vim.api.nvim_exec_autocmds("ColorScheme", {})
