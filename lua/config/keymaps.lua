@@ -35,3 +35,10 @@ vim.keymap.set('n', '<Leader><Space>', LazyVim.pick("files", { root = false }), 
 vim.keymap.set('n', '<Leader>G', '<cmd>Telescope git_files<cr>', {
   desc = 'Find Files (git ls-files)',
 })
+
+-- Live git grep
+vim.keymap.set('n', '<Leader>gg', function()
+  require('git_grep').live_grep({ regex = 'perl' })
+end, {
+  desc = 'Live git grep',
+})
