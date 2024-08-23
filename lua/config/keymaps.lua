@@ -42,3 +42,8 @@ vim.keymap.set('n', '<Leader>gg', function()
 end, {
   desc = 'Live git grep',
 })
+
+-- "-" to open neotree in current file's directory
+vim.keymap.set('n', '-', '<cmd>Neotree reveal reveal_force_cwd<CR>', {
+  desc = 'Open file tree (cwd)',
+})
