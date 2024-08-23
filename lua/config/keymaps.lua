@@ -22,3 +22,7 @@ vim.keymap.set('c', '%%', '<C-R>=expand("%:.:h") . "/"<CR>', {
 vim.keymap.set('n', '<Leader><Space>', LazyVim.pick("files", { root = false }), {
   desc = 'Find Files (cwd)',
 })
+-- Override to find files in Git
+vim.keymap.set('n', '<Leader>G', '<cmd>Telescope git_files<cr>', {
+  desc = 'Find Files (git ls-files)',
+})
