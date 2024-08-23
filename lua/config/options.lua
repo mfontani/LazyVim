@@ -4,3 +4,6 @@
 
 -- Don't auto-format, thanks!
 vim.g.autoformat = false
+
+-- No highlighting of the current line, please!
+vim.opt.cursorline = false
