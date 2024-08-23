@@ -7,8 +7,12 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 vim.cmd([[
+    " Comments
     autocmd ColorScheme * highlight Comment             term=bold ctermfg=white gui=none guifg=#CAC8FA
     autocmd ColorScheme * highlight gitCommitComment    term=bold ctermfg=white gui=bold guifg=#505080
     autocmd ColorScheme * highlight gitCommitUntracked  term=bold ctermfg=white gui=bold guifg=#505080
+    " TreeSitter Context
+    autocmd ColorScheme * highlight TreesitterContextBottom           gui=underline guifg=#6272A4 guibg=#111111
+    autocmd ColorScheme * highlight TreesitterContextLineNumberBottom gui=underline guifg=#6272A4 guibg=#111111
 ]])
 vim.api.nvim_exec_autocmds("ColorScheme", {})
