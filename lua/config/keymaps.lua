@@ -17,3 +17,8 @@ vim.keymap.set('n', '<Leader>*', '<cmd>Grepper -tool git -cword -noprompt<CR>', 
 vim.keymap.set('c', '%%', '<C-R>=expand("%:.:h") . "/"<CR>', {
   desc = 'Insert current file path',
 })
+
+-- Override for <space><space> to not open in "root"
+vim.keymap.set('n', '<Leader><Space>', LazyVim.pick("files", { root = false }), {
+  desc = 'Find Files (cwd)',
+})
