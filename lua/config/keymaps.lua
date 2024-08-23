@@ -1,6 +1,15 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+
+-- Command line editing?
+vim.keymap.set('c', '<C-a>', '<Home>', {
+  desc = 'Move to beginning of line',
+})
+vim.keymap.set('c', '<C-e>', '<End>', {
+  desc = 'Move to end of line',
+})
+
 vim.keymap.set("n", ";", ":", {
   desc = "DWIM : with ;",
 })
