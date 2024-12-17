@@ -31,14 +31,17 @@ vim.keymap.set('c', '%%', '<C-R>=expand("%:.:h") . "/"<CR>', {
 vim.keymap.set('n', '<Leader><Space>', LazyVim.pick("files", { root = false }), {
   desc = 'Find Files (cwd)',
 })
+
 -- Override to find files in Git
-vim.keymap.set('n', '<Leader>G', '<cmd>Telescope git_files<cr>', {
+vim.keymap.set('n', '<Leader>Gf', function()
+  require 'fzf-lua'.git_files()
+end, {
   desc = 'Find Files (git ls-files)',
 })
 
 -- Live git grep
-vim.keymap.set('n', '<Leader>gg', function()
-  require('git_grep').live_grep({ regex = 'perl' })
+vim.keymap.set('n', '<Leader>Gg', function()
+  require('fzf-lua').live_grep({ cmd = "git grep --line-number --column --color=always" })
 end, {
   desc = 'Live git grep',
 })
